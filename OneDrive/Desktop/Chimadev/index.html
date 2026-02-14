@@ -56,10 +56,10 @@
   </header>
 
   <!-- Mobile nav panel (overlay + side panel) -->
-  <div id="mobile-nav" class="fixed inset-0 z-40 hidden" aria-hidden="true">
-    <div id="mobile-nav-overlay" class="absolute inset-0 bg-black/60" tabindex="-1"></div>
+  <div id="mobile-nav" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <div id="mobile-nav-overlay" class="absolute inset-0 bg-black/60 z-40" tabindex="-1"></div>
     <aside role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title"
-      class="absolute left-0 top-0 h-full w-72 max-w-full bg-slate-950 border-r border-slate-800 p-6">
+      class="absolute left-0 top-0 h-full w-full sm:w-72 max-w-full bg-slate-950 border-r border-slate-800 p-6 z-50">
       <div class="flex items-center justify-between mb-6">
         <h3 id="mobile-nav-title" class="text-lg font-semibold text-slate-100">Menu</h3>
         <button id="mobile-nav-close" aria-label="Close menu"
