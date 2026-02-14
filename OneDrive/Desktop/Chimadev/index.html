@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Chima | Web Developer, Workflow Optimizer and AI Evangelizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Web design, app development, AI automation, and workflow optimization for small businesses, solo entrepreneurs, and influencers." />
+  <audio id="typing-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-soft-fast-typing-2584.mp3"></audio>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-30 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2">
+        <div
+          class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-lg">
+          C
+        </div>
+        <span class="font-semibold tracking-tight text-slate-100">Chima.dev</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+        <a href="#case-studies" class="hover:text-cyan-400 transition">Case Studies</a>
+        <a href="#testimonials" class="hover:text-cyan-400 transition">Testimonials</a>
+        <a href="#faq" class="hover:text-cyan-400 transition">FAQ</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle dark mode"
+          class="px-3 py-1 rounded-lg border border-slate-700 text-slate-300 text-xs hover:border-cyan-400 transition">
+          🌙 Dark
+        </button>
+
+      </nav>
+      <a href="#contact" aria-label="Connect with Chima for a consultation"
+        class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-400 text-slate-950 text-sm font-semibold hover:bg-cyan-300 transition">
+        Let’s talk
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative overflow-hidden">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.18),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(52,211,153,0.18),_transparent_55%)] pointer-events-none">
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/40 text-xs text-cyan-200 mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Web dev • AI automation • Workflow optimization
+          </p>
+          <h1 class="text-3xl md:text-5xl font-semibold tracking-tight text-slate-50 mb-4">
+            Websites that hustle harder<br class="hidden md:block" /> than you do.
+          </h1>
+          <p class="text-slate-300 text-base md:text-lg mb-6 max-w-xl">
+            I design, build, and automate digital experiences that save small businesses, influencers, and solo hustlers
+            from drowning in busywork.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <a href="#contact"
+              class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-cyan-400 text-slate-950 font-semibold text-sm hover:bg-cyan-300 transition shadow-lg shadow-cyan-400/30">
+              Let’s streamline your workflow
+            </a>
+            <a href="#services"
+              class="inline-flex items-center justify-center px-4 py-2 rounded-full border border-slate-700 text-slate-200 text-sm hover:border-cyan-400 hover:text-cyan-300 transition">
+              View services
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-10 -right-6 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl"></div>
+          <div class="absolute -bottom-10 -left-6 w-40 h-40 bg-emerald-400/20 rounded-full blur-3xl"></div>
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl shadow-slate-900/80">
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-xs font-semibold text-cyan-300">Live Preview · Dashboard</p>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[10px] text-emerald-500 uppercase font-bold tracking-wider">Live</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4 text-xs">
+              <div
+                class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-400/30 transition-colors">
+                <p class="text-slate-400 mb-1">Time saved / week</p>
+                <p class="text-2xl font-semibold text-emerald-400"><span id="dash-time">0</span>h</p>
+              </div>
+              <div
+                class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-rose-400/30 transition-colors">
+                <p class="text-slate-400 mb-1">Manual tasks</p>
+                <p class="text-2xl font-semibold text-rose-400">-<span id="dash-tasks">0</span>%</p>
+              </div>
+              <div
+                class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-400/30 transition-colors">
+                <p class="text-slate-400 mb-1">Bookings</p>
+                <p class="text-2xl font-semibold text-cyan-400">+<span id="dash-bookings">0</span>%</p>
+              </div>
+              <div
+                class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-400/30 transition-colors">
+                <p class="text-slate-400 mb-1">Stress level</p>
+                <p class="text-2xl font-semibold text-slate-200" id="dash-stress">↓</p>
+              </div>
+            </div>
+            <!-- Activity Bar -->
+            <div class="w-full h-1 bg-slate-800 rounded-full overflow-hidden mb-4">
+              <div id="dash-progress"
+                class="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 w-1/3 transition-all duration-1000"></div>
+            </div>
+            <p class="text-[10px] text-slate-500 font-mono flex justify-between">
+              <span>SYS_PROCESS: RUNNING</span>
+              <span id="dash-load">CPU: 12%</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- About -->
+  <section id="about" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-4">Meet Chima — Your Workflow Wingman</h2>
+          <p class="text-slate-300 mb-4">
+            I’m a web developer with a knack for turning chaos into clarity. My toolkit isn’t just code — it’s strategy,
+            design thinking, and a healthy dose of humor.
+          </p>
+          <p class="text-slate-300 mb-4">
+            I blend <span class="text-cyan-300 font-medium">AI product management, project leadership, and business
+              process automation</span> into solutions that actually make life easier. Whether you’re an Instagram
+            influencer juggling content, or a small business owner buried in spreadsheets, I help you reclaim your time
+            and sanity.
+          </p>
+          <p class="text-slate-300 mb-4">
+            Think of me as the guy who makes your tech <span class="italic">work for you</span>, not the other way
+            around.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
+            <h3 class="text-sm font-semibold text-slate-100 mb-2">Core Skills</h3>
+            <ul class="text-sm text-slate-300 space-y-1">
+              <li>• AI Product Management & Strategy Thinking</li>
+              <li>• Project Management & Organizational Systems</li>
+              <li>• Business Process Automation & Integrations</li>
+              <li>• Internal Apps & Workflow Optimization for small teams</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
+            <h3 class="text-sm font-semibold text-slate-100 mb-2">Tech Stack</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+
+              <!-- Firebase -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256">
+                  <path fill="#FFCA28" d="M36.1,192.4l11.6-70.3L95,30c1.3-3,5.6-3,6.9,0l17.7,33.1L36.1,192.4z" />
+                  <path fill="#FFA000"
+                    d="M141.5,103.7L122.9,69c-1.4-2.6-5.2-2.6-6.6,0L36.1,192.4l65-6.6L141.5,103.7z" />
+                  <path fill="#DD2C00" d="M128,197.8L36.1,192.4l87.5,49.2c2.7,1.5,6,1.5,8.7,0l87.5-49.2L128,197.8z" />
+                  <path fill="#FFCA28"
+                    d="M219.9,192.4l-31.1-61.9l-47.3-26.8l61.6,121.2c1.4,2.8,5.4,2.8,6.8,0l10.1-19.4L219.9,192.4z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Firebase</span>
+              </div>
+
+              <!-- Antigravity -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-lg">
+                  A</div>
+                <span class="text-slate-200 text-sm font-medium">Antigravity</span>
+              </div>
+
+              <!-- Claude -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256">
+                  <path fill="#D97757"
+                    d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128s128-57.3 128-128S198.7 0 128 0zm0 240c-61.8 0-112-50.2-112-112S66.2 16 128 16s112 50.2 112 112s-50.2 112-112 112zm48.1-112H79.9c-4.4 0-8 3.6-8 8v40c0 4.4 3.6 8 8 8h96.2c4.4 0 8-3.6 8-8v-40c0-4.4-3.6-8-8-8zm-8 40H87.9v-24h80.2v24z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Claude AI</span>
+              </div>
+
+              <!-- Notion -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256">
+                  <path fill="#FFF" d="M42.2 36.3v183.4h171.6V36.3H42.2zm151.4 163.7H62.4V56h131.2v144z" />
+                  <path d="M72.7 75.6h20.4L137 141V75.6h20.4v104.8h-20.4L93.1 115v65.4H72.7V75.6z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Notion</span>
+              </div>
+
+              <!-- Airtable -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256">
+                  <path fill="#18BFFF" d="M128 24l96 56v104l-96 56l-96-56V80l96-56z" />
+                  <path fill="#FFF" d="M128 64l64 36v56l-64 36l-64-36V100l64-36z" />
+                  <path fill="#18BFFF" d="M128 88l40 24v32l-40 24l-40-24v-32l40-24z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Airtable</span>
+              </div>
+
+              <!-- Stripe -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256">
+                  <path fill="#635BFF"
+                    d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128S57.3 0 128 0s128 57.3 128 128z" />
+                  <path
+                    d="M100.8 152c0-10.4 8.7-14.7 23.3-14.7c15.7 0 35.1 4.7 35.1 4.7v-21.6s-16.7-4-32.5-4c-28.8 0-48.4 13.7-48.4 39.5c0 38.6 53 32.3 53 48.9c0 12.3-10.4 16.2-26 16.2c-19.1 0-38.9-6.3-38.9-6.3v22.7s19.8 6.5 41.5 6.5c30.9 0 49.3-15 49.3-40.2c.1-41.6-56.4-33.6-56.4-51.7z"
+                    fill="#FFF" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Stripe</span>
+              </div>
+
+              <!-- Card -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256">
+                  <path fill="#F7DF1E" d="M0 0h256v256H0z" />
+                  <path d="M67 214l20-12c4 7 8 13 17 13c9 0 14-4 14-17V114h24v84c0 25-15 36-36 36c-19 0-30-10-39-20"
+                    fill="#000" />
+                  <path
+                    d="M152 212l20-11c5 8 11 14 22 14c9 0 15-4 15-10c0-7-6-9-16-13l-6-2c-17-7-28-16-28-34c0-17 13-30 34-30c15 0 26 5 34 19l-19 12c-4-7-9-10-15-10c-7 0-12 4-12 10c0 7 5 9 15 13l6 2c20 9 31 17 31 35c0 20-16 31-38 31c-21 0-34-10-41-23"
+                    fill="#000" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">JavaScript</span>
+              </div>
+
+              <!-- HTML5 -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 128 128">
+                  <path fill="#E44D26" d="M19 3l9 101 36 10 36-10 9-101z" />
+                  <path fill="#F16529" d="M64 116l29-8 8-90H64z" />
+                  <path fill="#EBEBEB" d="M64 52H44l-1-11h21V30H32l1 12 3 34h28z" />
+                  <path fill="#fff" d="M64 52v11h19l-2 22-17 5v12l29-8 4-42 1-12z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">HTML5</span>
+              </div>
+
+              <!-- CSS3 -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 128 128">
+                  <path fill="#1572B6" d="M19 3l9 101 36 10 36-10 9-101z" />
+                  <path fill="#33A9DC" d="M64 116l29-8 8-90H64z" />
+                  <path fill="#fff" d="M64 52H44l-1-11h21V30H32l1 12 3 34h28z" />
+                  <path fill="#EBEBEB" d="M64 52v11h19l-2 22-17 5v12l29-8 4-42 1-12z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">CSS3</span>
+              </div>
+
+              <!-- Tailwind CSS -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="36" height="36" viewBox="0 0 48 48">
+                  <path fill="#38BDF8"
+                    d="M24 10c-6 0-10 3-12 9c2-3 4-4 7-4c3 0 5 2 6 5c1 3 3 5 7 5c6 0 10-3 12-9c-2 3-4 4-7 4c-3 0-5-2-6-5c-1-3-3-5-7-5zM12 24c-6 0-10 3-12 9c2-3 4-4 7-4c3 0 5 2 6 5c1 3 3 5 7 5c6 0 10-3 12-9c-2 3-4 4-7 4c-3 0-5-2-6-5c-1-3-3-5-7-5z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Tailwind CSS</span>
+              </div>
+
+              <!-- Python -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="34" height="34" viewBox="0 0 128 128">
+                  <path fill="#3776AB"
+                    d="M63 4c-27 0-25 12-25 12v17h26v5H38S13 37 13 63c0 27 24 26 24 26h14V72s-1-24 24-24h26s24 1 24-24c0-27-24-24-24-24H63z" />
+                  <path fill="#FFD43B"
+                    d="M65 124c27 0 25-12 25-12v-17H64v-5h26s25 1 25-26c0-27-24-26-24-26H82v17s1 24-24 24H32s-24-1-24 24c0 27 24 24 24 24h33z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Python</span>
+              </div>
+
+              <!-- Power BI -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="34" height="34" viewBox="0 0 48 48">
+                  <path fill="#F2C811" d="M6 10h6v28H6zM16 16h6v22h-6zM26 6h6v32h-6zM36 20h6v18h-6z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Power BI</span>
+              </div>
+
+              <!-- Google AI Studio -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="34" height="34" viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="10" fill="#4285F4" />
+                  <circle cx="34" cy="14" r="6" fill="#EA4335" />
+                  <circle cx="14" cy="14" r="6" fill="#FBBC05" />
+                  <circle cx="14" cy="34" r="6" fill="#34A853" />
+                  <circle cx="34" cy="34" r="6" fill="#A142F4" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Google AI Studio</span>
+              </div>
+
+              <!-- Stitch -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="34" height="34" viewBox="0 0 48 48">
+                  <rect x="6" y="6" width="36" height="36" rx="8" fill="#5A67D8" />
+                  <path fill="#fff" d="M14 24h20M24 14v20" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">Stitch</span>
+              </div>
+
+              <!-- WordPress -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="34" height="34" viewBox="0 0 128 128">
+                  <circle cx="64" cy="64" r="60" fill="#21759B" />
+                  <path fill="#fff"
+                    d="M64 20c-24 0-44 20-44 44s20 44 44 44s44-20 44-44S88 20 64 20zm0 6c21 0 38 17 38 38c0 15-9 28-22 34l14-40c1-3 1-5 1-7c0-8-4-14-10-14c-4 0-7 3-7 8c0 3 1 6 2 10l2 8l-12 36L48 40c-1-3-2-6-2-9c0-5 3-9 8-9c4 0 7 3 9 8l3 10l3 10l3-10c2-6 5-8 9-8c5 0 8 4 8 9c0 2 0 4-1 7l-14 40c-5 2-10 3-15 3c-21 0-38-17-38-38S43 26 64 26z" />
+                </svg>
+                <span class="text-slate-200 text-sm font-medium">WordPress</span>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
+            <h3 class="text-sm font-semibold text-slate-100 mb-2">Who I Work With</h3>
+            <p class="text-sm text-slate-300">
+              Small businesses, solo entrepreneurs, and Instagram influencers who are ready to stop drowning in manual
+              tasks and start surfing on automation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+            What I Do Best (Besides Coffee‑fueled Coding)
+          </h2>
+          <p class="text-slate-300 max-w-xl">
+            I build digital solutions that save you time, make you look good, and keep your business running smoother
+            than a fresh jar of peanut butter.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-cyan-400/60 hover:-translate-y-2 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-cyan-400/10 flex items-center justify-center mb-4 group-hover:bg-cyan-400 transition-colors">
+            <svg class="text-cyan-400 group-hover:text-slate-950 transition-colors" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2 text-slate-50">Web Design & Redesign</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Sleek, responsive sites that look good on any screen — even your grandma’s iPad. I focus on performance and
+            conversion.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-emerald-400/60 hover:-translate-y-2 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-emerald-400/10 flex items-center justify-center mb-4 group-hover:bg-emerald-400 transition-colors">
+            <svg class="text-emerald-400 group-hover:text-slate-950 transition-colors" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2 text-slate-50">App Development</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Custom web apps that solve real problems. From internal portals to client-facing tools, I build
+            functionalities that scale.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-sky-400/60 hover:-translate-y-2 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-sky-400/10 flex items-center justify-center mb-4 group-hover:bg-sky-400 transition-colors">
+            <svg class="text-sky-400 group-hover:text-slate-950 transition-colors" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2 text-slate-50">Branding & Integrations</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Cohesive digital identities plus seamless connections between tools like Notion, Airtable, and Stripe.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-rose-400/60 hover:-translate-y-2 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-rose-400/10 flex items-center justify-center mb-4 group-hover:bg-rose-400 transition-colors">
+            <svg class="text-rose-400 group-hover:text-slate-950 transition-colors" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 8V4H8"></path>
+              <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+              <path d="M2 14h2"></path>
+              <path d="M20 14h2"></path>
+              <path d="M15 13v2"></path>
+              <path d="M9 13v2"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2 text-slate-50">AI Automation & Chatbots</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Smart systems that handle repetitive tasks, customer queries, and lead generation while you sleep.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-violet-400/60 hover:-translate-y-2 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-violet-400/10 flex items-center justify-center mb-4 group-hover:bg-violet-400 transition-colors">
+            <svg class="text-violet-400 group-hover:text-slate-950 transition-colors" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2 text-slate-50">Workflow Optimization</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Streamlined processes that cut the fluff and boost productivity by automating your back-office chaos.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl border border-dashed border-slate-700 bg-slate-900/40 hover:border-slate-500 hover:-translate-y-2 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-slate-400/10 flex items-center justify-center mb-4 group-hover:bg-slate-400 transition-colors">
+            <svg class="text-slate-400 group-hover:text-slate-950 transition-colors" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2 text-slate-50">Custom Solutions</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Got a weird workflow? I love those. We’ll design something that fits your business like a glove.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- How I Work (Process Flow) -->
+  <section id="process" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-4">From Chaos to Code: My Process</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          I don't just build websites; I build systems. Here is how we'll turn your manual mess into a streamlined
+          operation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 relative">
+        <!-- Connecting Line (Desktop) -->
+        <div
+          class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400/0 via-cyan-400/20 to-cyan-400/0 -translate-y-1/2 pointer-events-none">
+        </div>
+
+        <!-- Step 1 -->
+        <div
+          class="relative group p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:bg-slate-900/60 transition-all duration-300">
+          <div
+            class="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-cyan-400 font-bold mb-4 shadow-lg group-hover:border-cyan-400 transition-colors">
+            1</div>
+          <h3 class="text-slate-50 font-semibold mb-2">Audit & Discovery</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            I dive deep into your spreadsheets, DMs, and workflows to find exactly where your time is leaking.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="relative group p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:bg-slate-900/60 transition-all duration-300">
+          <div
+            class="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-emerald-400 font-bold mb-4 shadow-lg group-hover:border-emerald-400 transition-colors">
+            2</div>
+          <h3 class="text-slate-50 font-semibold mb-2">Architecture</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            I design the logic. Whether it's a custom app, an AI integration, or a website overhaul, we map it out
+            first.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="relative group p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:bg-slate-900/60 transition-all duration-300">
+          <div
+            class="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-sky-400 font-bold mb-4 shadow-lg group-hover:border-sky-400 transition-colors">
+            3</div>
+          <h3 class="text-slate-50 font-semibold mb-2">Build & Automate</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            The fun part. I write the code, set up the triggers, and build the internal tools that do the work for you.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="relative group p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:bg-slate-900/60 transition-all duration-300">
+          <div
+            class="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-violet-400 font-bold mb-4 shadow-lg group-hover:border-violet-400 transition-colors">
+            4</div>
+          <h3 class="text-slate-50 font-semibold mb-2">Launch & Scale</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            We flip the switch. You get your time back, and your business starts running on autopilot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section id="case-studies" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Story‑Driven Case Studies</h2>
+          <p class="text-slate-300 max-w-xl">
+            Real (and realistic) transformations — from spreadsheet chaos to smooth, automated workflows.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Case Study 1 -->
+        <article class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <h3 class="text-lg font-semibold text-slate-50 mb-2">
+            From Spreadsheet Chaos to Seamless Automation — Boutique Fitness Studio
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-300">
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Challenge</h4>
+              <p>
+                A boutique fitness studio was juggling class schedules, membership payments, and Instagram promotions
+                manually. Their “system” was a patchwork of Excel sheets, sticky notes, and late‑night DMs.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Approach</h4>
+              <p>
+                I built a WordPress site with integrated booking and payments, connected Instagram promos via Stitch,
+                embedded Microsoft BI dashboards, and added a chatbot for FAQs like “What’s today’s class schedule?”
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Outcome</h4>
+              <p>
+                Manual data entry dropped by <span class="text-emerald-400 font-semibold">80%</span>, bookings increased
+                by <span class="text-emerald-400 font-semibold">30%</span>, and the owner saved <span
+                  class="text-emerald-400 font-semibold">10+ hours per week</span>.
+              </p>
+            </div>
+          </div>
+          <p class="mt-3 text-xs text-slate-400 italic">
+            “It feels like I hired a full‑time assistant, but it’s just my website doing the heavy lifting.”
+          </p>
+        </article>
+
+        <!-- Case Study 2 -->
+        <article class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <h3 class="text-lg font-semibold text-slate-50 mb-2">
+            From DM Overload to Smart Engagement — Instagram Influencer
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-300">
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Challenge</h4>
+              <p>
+                A lifestyle influencer with 50k followers was drowning in DMs, brand inquiries, and content scheduling.
+                She spent more time organizing than creating.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Approach</h4>
+              <p>
+                I built a personal site with a collab portfolio and booking form, added a chatbot for FAQs, automated
+                her content calendar using Google AI Studio workflows, and connected Instagram to a Microsoft BI
+                dashboard.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Outcome</h4>
+              <p>
+                DM response time dropped by <span class="text-emerald-400 font-semibold">70%</span>, she secured <span
+                  class="text-emerald-400 font-semibold">5 new brand deals</span> in a month, and freed up <span
+                  class="text-emerald-400 font-semibold">15+ hours per week</span> for content creation.
+              </p>
+            </div>
+          </div>
+          <p class="mt-3 text-xs text-slate-400 italic">
+            “I finally get to focus on being creative, not being my own assistant.”
+          </p>
+        </article>
+
+        <!-- Case Study 3 -->
+        <article class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <h3 class="text-lg font-semibold text-slate-50 mb-2">
+            Turning a One‑Person Show Into a Smooth Operation — Handmade Jewelry Seller
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-300">
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Challenge</h4>
+              <p>
+                A solo entrepreneur selling handmade jewelry was struggling with order management, customer
+                communication, and inventory tracking using email threads and spreadsheets.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Approach</h4>
+              <p>
+                I built a WordPress e‑commerce site with automated order tracking, connected inventory via Stitch,
+                automated order confirmations and shipping updates, and embedded a Microsoft BI sales dashboard.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Outcome</h4>
+              <p>
+                Order errors dropped to <span class="text-emerald-400 font-semibold">zero</span>, customer satisfaction
+                improved, and sales grew by <span class="text-emerald-400 font-semibold">40% in three months</span>.
+              </p>
+            </div>
+          </div>
+          <p class="mt-3 text-xs text-slate-400 italic">
+            “My website feels like part of my team.”
+          </p>
+        </article>
+
+        <!-- Case Study 4 (New: Internal App & Upgrade) -->
+        <article class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <h3 class="text-lg font-semibold text-slate-50 mb-2">
+            Modernizing Legacy Systems — Regional Logistics Company
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-300">
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Challenge</h4>
+              <p>
+                A logistics provider was using a 10-year-old internal portal that crashed daily. Drivers were using
+                paper forms, and dispatchers were manually re-typing data into an Excel sheet.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Approach</h4>
+              <p>
+                I replaced the legacy site with a modern, responsive internal dashboard. I built a mobile-friendly
+                "Driver Portal" that auto-syncs via API to their main system and added real-time SMS alerts for
+                dispatchers using Python and Zapier.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-1">The Outcome</h4>
+              <p>
+                System uptime hit <span class="text-emerald-400 font-semibold">99.9%</span>, paper use dropped by <span
+                  class="text-emerald-400 font-semibold">100%</span>, and data entry errors were eliminated, saving the
+                team <span class="text-emerald-400 font-semibold">25+ hours</span> of manual re-typing per week.
+              </p>
+            </div>
+          </div>
+          <p class="mt-3 text-xs text-slate-400 italic">
+            "The transition was seamless. We went from the stone age to the cloud in just six weeks."
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+            What Clients Say (Spoiler: They’re Smiling)
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <p class="text-sm text-slate-300 mb-3">
+            “Chima turned my spreadsheet nightmare into a dream workflow. I used to spend hours chasing payments — now
+            my website does it for me while I coach clients. It’s like having a digital assistant who never sleeps.”
+          </p>
+          <p class="text-xs text-slate-400">Boutique Fitness Studio Owner</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <p class="text-sm text-slate-300 mb-3">
+            “I finally stopped drowning in DMs. The chatbot Chima built answers my fans faster than I can type ‘LOL.’
+            Thanks to the booking form, brands can reach me without chaos. More collabs, less stress — I’m obsessed.”
+          </p>
+          <p class="text-xs text-slate-400">Lifestyle Influencer</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <p class="text-sm text-slate-300 mb-3">
+            “Running a one‑woman business felt impossible until Chima redesigned my site. Orders flow smoothly,
+            customers get instant updates, and I actually have time to make jewelry again. My website feels like part of
+            my team.”
+          </p>
+          <p class="text-xs text-slate-400">Solo Entrepreneur, Jewelry Brand</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
+          <p class="text-sm text-slate-300 mb-3">
+            “If websites had personalities, mine would be confident, stylish, and hardworking — just like Chima’s
+            approach. He doesn’t just build sites; he builds peace of mind.”
+          </p>
+          <p class="text-xs text-slate-400">Happy Human, Future You</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+            Frequently Asked (and Occasionally Funny) Questions
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-cyan-400/40 transition">
+            <h3 class="font-semibold text-slate-100 mb-2">Do you only work with techies?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Not at all. Most of my clients are small business owners and influencers who just want their tech to <span
+                class="italic text-cyan-400">work</span>.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-emerald-400/40 transition">
+            <h3 class="font-semibold text-slate-100 mb-2">How fast can you build my site?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Simple sites can be ready in 2-3 weeks. Complex apps + automation take longer, but I keep you updated
+              every step of the way.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-sky-400/40 transition">
+            <h3 class="font-semibold text-slate-100 mb-2">Will AI replace me?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Nope. AI is here to <span class="italic">assist</span>. I use it to handle the boring stuff so you can
+              focus on being human.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-violet-400/40 transition">
+            <h3 class="font-semibold text-slate-100 mb-2">Is this going to cost me a fortune?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              I tailor solutions to fit small business budgets. No enterprise-only sticker shock here—just value for
+              your sanity.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-rose-400/40 transition">
+            <h3 class="font-semibold text-slate-100 mb-2">Can you make my brand look cooler?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Absolutely. Sleek redesigns are my bread and butter. I'll make sure you look sharp enough to impress
+              competitors.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-cyan-400/40 transition">
+            <h3 class="font-semibold text-slate-100 mb-2">What happens after launch?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              I don’t just vanish. I offer ongoing support and optimization so your site keeps evolving with your
+              business.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-sm text-slate-400 italic">
+        Still curious? Shoot me a message — I promise I won’t answer in binary.
+      </p>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section id="roi-calculator" class="border-t border-slate-800 bg-slate-900/40">
+    <div class="max-w-4xl mx-auto px-4 py-16 md:py-20 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-4">The Cost of Doing Nothing</h2>
+      <p class="text-slate-300 mb-10 max-w-2xl mx-auto">
+        Manual tasks aren't just boring — they're expensive. Use the slider to see how much "busywork" is costing your
+        business every single year.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-slate-950 p-8 rounded-3xl border border-slate-800">
+        <div class="space-y-8 text-left">
+          <div>
+            <div class="flex justify-between mb-4">
+              <label for="manual-hours" class="text-sm font-semibold text-slate-200">Manual Hours / Week</label>
+              <span id="hours-val" class="text-cyan-400 font-bold">20h</span>
+            </div>
+            <input type="range" id="manual-hours" min="1" max="40" value="20"
+              class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400" />
+          </div>
+          <div>
+            <label for="hourly-rate" class="block text-sm font-semibold text-slate-200 mb-4">Your Hourly Rate
+              ($)</label>
+            <input type="number" id="hourly-rate" value="50"
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-400" />
+          </div>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center">
+          <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Estimated Annual Loss</p>
+          <div class="text-4xl md:text-5xl font-bold text-slate-50 mb-2">$<span id="annual-loss">52,000</span></div>
+          <p class="text-sm text-slate-400">
+            That’s <span id="weeks-lost" class="text-rose-400 font-bold">26</span> weeks of pure productivity lost to
+            chaos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+            Let’s Make Your Workflow Sparkle
+          </h2>
+          <p class="text-slate-300 mb-4">
+            Whether you’re tired of spreadsheets, DM chaos, or clunky websites, we can fix that. Tell me what your day
+            looks like right now — and what you wish it looked like.
+          </p>
+          <p class="text-slate-300 mb-4">
+            I’ll come back with ideas, not jargon.
+          </p>
+          <div class="space-y-2 text-sm text-slate-300">
+            <p><span class="font-semibold text-slate-100">Email:</span> your.email@example.com</p>
+            <p><span class="font-semibold text-slate-100">LinkedIn:</span> /in/your‑linkedin</p>
+            <p><span class="font-semibold text-slate-100">Instagram:</span> @yourhandle</p>
+          </div>
+        </div>
+        <div>
+          <form id="contact-form" class="space-y-4 p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
+            <div>
+              <label for="name" class="block text-xs font-semibold text-slate-200 mb-1">Name</label>
+              <input id="name" name="name" type="text" required
+                class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                placeholder="Your name" />
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-semibold text-slate-200 mb-1">Email</label>
+              <input id="email" name="email" type="email" required
+                class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="type" class="block text-xs font-semibold text-slate-200 mb-1">Project type</label>
+              <select id="type" name="project_type"
+                class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-100 focus:outline-none focus:border-cyan-400">
+                <option>Web design / redesign</option>
+                <option>App development</option>
+                <option>AI automation / chatbot</option>
+                <option>Workflow optimization</option>
+                <option>Something else (surprise me)</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-200 mb-1">Tell me about your current
+                chaos</label>
+              <textarea id="message" name="message" rows="4" required
+                class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                placeholder="What’s slowing you down right now?"></textarea>
+            </div>
+            <button type="submit" id="submit-btn"
+              class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-cyan-400 text-slate-950 font-semibold text-sm hover:bg-cyan-300 transition shadow-lg shadow-cyan-400/30">
+              Send message
+            </button>
+            <div id="form-status" class="hidden text-xs mt-2 text-center"></div>
+            <p class="text-[11px] text-slate-400">
+              No spam, no pressure — just a conversation about making your workday lighter.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div
+      class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>© <span id="year"></span> Chima.dev — Web, AI & Workflows.</p>
+      <p>Built with HTML, Tailwind, and a little bit of automation magic.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Floating Chatbot Widget -->
+  <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50">
+
+    <!-- Floating Button -->
+    <button id="chatbot-toggle"
+      class="w-14 h-14 rounded-full bg-cyan-400 shadow-xl flex items-center justify-center hover:bg-cyan-300 transition">
+      💬
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chatbot-window"
+      class="hidden w-80 md:w-96 h-[480px] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden mt-4">
+
+      <!-- Header -->
+      <div class="p-4 bg-slate-800 border-b border-slate-700 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div id="bot-avatar" class="w-8 h-8 rounded-full bg-cyan-400"></div>
+          <h3 class="text-slate-100 font-semibold text-sm">Mini‑Bot</h3>
+        </div>
+        <button id="chatbot-close" class="text-slate-400 hover:text-slate-200 text-xl leading-none">×</button>
+      </div>
+
+      <!-- Personality Selector -->
+      <div class="p-3 border-b border-slate-700 bg-slate-900">
+        <select id="bot-mode"
+          class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-100 focus:outline-none focus:border-cyan-400">
+          <option value="fun">Fun</option>
+          <option value="professional">Professional</option>
+          <option value="sarcastic">Sarcastic</option>
+        </select>
+      </div>
+
+      <!-- Chat Window -->
+      <div id="chat-window" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm text-slate-200"></div>
+
+      <!-- Input Area -->
+      <div class="p-3 border-t border-slate-700 bg-slate-900 flex items-center gap-2">
+        <button id="voice-btn"
+          class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 transition">
+          🎤
+        </button>
+        <input id="chat-input" type="text" placeholder="Type a message..."
+          class="flex-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-100 focus:outline-none focus:border-cyan-400" />
+        <button id="chat-send"
+          class="px-4 py-2 rounded-lg bg-cyan-400 text-slate-950 font-semibold text-sm hover:bg-cyan-300 transition">
+          Send
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    const chatWindow = document.getElementById("chat-window");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+    const botMode = document.getElementById("bot-mode");
+    const botAvatar = document.getElementById("bot-avatar");
+    const toggleBtn = document.getElementById("chatbot-toggle");
+    const closeBtn = document.getElementById("chatbot-close");
+    const chatWidget = document.getElementById("chatbot-window");
+    const voiceBtn = document.getElementById("voice-btn");
+
+    /* -----------------------------
+       CHAT HISTORY PERSISTENCE
+    ----------------------------- */
+    function saveHistory() {
+      localStorage.setItem("chatHistory", chatWindow.innerHTML);
+    }
+    function loadHistory() {
+      const history = localStorage.getItem("chatHistory");
+      if (history) chatWindow.innerHTML = history;
+    }
+    loadHistory();
+
+    /* -----------------------------
+       TIMESTAMP
+    ----------------------------- */
+    function timestamp() {
+      const now = new Date();
+      return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    }
+
+    /* -----------------------------
+       ADD MESSAGE
+    ----------------------------- */
+    function addMessage(text, sender = "bot") {
+      const bubble = document.createElement("div");
+      bubble.className = "flex items-start gap-2";
+
+      const avatar = document.createElement("div");
+      avatar.className =
+        sender === "bot"
+          ? botAvatar.className
+          : "w-6 h-6 rounded-full bg-emerald-400";
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "bg-slate-800 px-3 py-2 rounded-lg max-w-[80%]";
+
+      const msg = document.createElement("div");
+      msg.textContent = text;
+
+      const time = document.createElement("div");
+      time.className = "text-[10px] text-slate-400 mt-1";
+      time.textContent = timestamp();
+
+      wrapper.appendChild(msg);
+      wrapper.appendChild(time);
+      bubble.appendChild(avatar);
+      bubble.appendChild(wrapper);
+      chatWindow.appendChild(bubble);
+
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+      saveHistory();
+    }
+
+    /* -----------------------------
+       TYPING INDICATOR
+    ----------------------------- */
+    function showTyping() {
+      playTypingSound();
+      const typingInterval = setInterval(playTypingSound, 500);
+      const typing = document.createElement("div");
+      typing.id = "typing-indicator";
+      typing.className = "flex items-start gap-2";
+
+      const avatar = document.createElement("div");
+      avatar.className = botAvatar.className;
+
+      const dots = document.createElement("div");
+      dots.className =
+        "bg-slate-800 px-3 py-2 rounded-lg text-slate-300 text-xs";
+      dots.innerHTML = `
+      <span class="animate-pulse">●</span>
+      <span class="animate-pulse delay-150">●</span>
+      <span class="animate-pulse delay-300">●</span>
+    `;
+
+      typing.appendChild(avatar);
+      typing.appendChild(dots);
+      chatWindow.appendChild(typing);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    function hideTyping() {
+      clearInterval(typingInterval);
+      const t = document.getElementById("typing-indicator");
+      if (t) t.remove();
+    }
+
+    /* -----------------------------
+       PERSONALITY MODES + AVATARS
+    ----------------------------- */
+    const personalities = {
+      fun: {
+        avatar: "w-8 h-8 rounded-full bg-cyan-400",
+        greet: "Hey hey! Ready to automate your chaos?",
+        automate: "I automate everything except your love life. That one’s still in beta.",
+        joke: "Why did the developer go broke? Because he used up all his cache.",
+        website: "Websites that sparkle, convert, and never ghost your customers.",
+        ai: "AI is my superpower. I use it to fight boring tasks and bad workflows.",
+        savings: "Money talks! Check out the ROI calculator on this page to see how much we can save you.",
+        default: "Ooooh interesting. Tell me more, human friend."
+      },
+      professional: {
+        avatar: "w-8 h-8 rounded-full bg-blue-400",
+        greet: "Hello. How can I support your workflow or automation needs today?",
+        automate: "I can streamline bookings, emails, reporting, and operational workflows efficiently.",
+        joke: "Debugging is like being a detective in a crime movie where you are also the murderer.",
+        website: "I build clean, responsive, conversion-focused websites tailored to your business goals.",
+        ai: "AI is a powerful tool for reducing manual workload and improving operational efficiency.",
+        savings: "Operational efficiency leads to direct cost savings. I recommend using our specialized ROI calculator below to estimate your potential annual recovery.",
+        default: "I understand. Could you provide more details so I can assist effectively?"
+      },
+      sarcastic: {
+        avatar: "w-8 h-8 rounded-full bg-rose-400",
+        greet: "Oh great, another human. What chaos are we fixing today?",
+        automate: "Sure, I’ll automate your tasks. Your procrastination, however, is out of scope.",
+        joke: "A joke? Your current workflow is already hilarious.",
+        website: "Yes, I build websites. No, they won’t fix your bad WiFi.",
+        ai: "AI is amazing. It even pretends to listen better than most people.",
+        savings: "Ah, looking for the bottom line? Scroll down to the ROI calculator. It'll show you exactly how much money is currently leaking out of your business.",
+        default: "Fascinating. Truly. Go on, I’m riveted."
+      }
+    };
+
+    function updateAvatar() {
+      botAvatar.className = personalities[botMode.value].avatar;
+    }
+    botMode.addEventListener("change", updateAvatar);
+    updateAvatar();
+
+    /* -----------------------------
+       BOT REPLY LOGIC
+    ----------------------------- */
+    function botReply(text) {
+      const mode = personalities[botMode.value];
+      const t = text.toLowerCase();
+
+      if (t.includes("hello") || t.includes("hi")) return mode.greet;
+      if (t.includes("automate")) return mode.automate;
+      if (t.includes("joke")) return mode.joke;
+      if (t.includes("website")) return mode.website;
+      if (t.includes("ai")) return mode.ai;
+      if (t.includes("savings") || t.includes("roi") || t.includes("money") || t.includes("cost")) return mode.savings;
+
+      return mode.default;
+    }
+
+    /* -----------------------------
+       SEND MESSAGE
+    ----------------------------- */
+    function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      addMessage(text, "user");
+      chatInput.value = "";
+
+      showTyping();
+      setTimeout(() => {
+        hideTyping();
+        addMessage(botReply(text), "bot");
+      }, 1200);
+    }
+
+    chatSend.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    /* -----------------------------
+       VOICE INPUT
+    ----------------------------- */
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.lang = "en-US";
+
+      voiceBtn.addEventListener("click", () => {
+        voiceBtn.textContent = "🎙️";
+        recognition.start();
+      });
+
+      recognition.onresult = (e) => {
+        const transcript = e.results[0][0].transcript;
+        chatInput.value = transcript;
+        voiceBtn.textContent = "🎤";
+      };
+
+      recognition.onend = () => {
+        voiceBtn.textContent = "🎤";
+      };
+    }
+
+    /* -----------------------------
+       FLOATING WIDGET TOGGLE
+    ----------------------------- */
+    toggleBtn.addEventListener("click", () => {
+      chatWidget.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      chatWidget.classList.add("hidden");
+    });
+  </script>
+
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+
+    function applyTheme(mode) {
+      if (mode === "light") {
+        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
+        themeToggle.textContent = "☀️ Light";
+      } else {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+        themeToggle.textContent = "🌙 Dark";
+      }
+      localStorage.setItem("theme", mode);
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const current = localStorage.getItem("theme") || "dark";
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+
+    applyTheme(localStorage.getItem("theme") || "dark");
+
+    const typingSound = document.getElementById("typing-sound");
+
+
+    function playTypingSound() {
+      typingSound.currentTime = 0;
+      typingSound.play();
+    }
+
+    // ROI Calculator Logic
+    const hoursInput = document.getElementById('manual-hours');
+    const rateInput = document.getElementById('hourly-rate');
+    const hoursVal = document.getElementById('hours-val');
+    const annualLossText = document.getElementById('annual-loss');
+    const weeksLostElem = document.getElementById('weeks-lost');
+
+    function calculateROI() {
+      if (!hoursInput || !rateInput || !hoursVal || !annualLossText || !weeksLostElem) return;
+
+      const hours = parseInt(hoursInput.value);
+      const rate = parseInt(rateInput.value) || 0;
+
+      hoursVal.textContent = hours + (hours >= 40 ? 'h+' : 'h');
+
+      const yearlyLoss = hours * rate * 52;
+      annualLossText.textContent = yearlyLoss.toLocaleString();
+
+      const totalHoursYear = hours * 52;
+      const weeksLost = Math.round(totalHoursYear / 40);
+      weeksLostElem.textContent = weeksLost;
+    }
+
+    if (hoursInput && rateInput) {
+      hoursInput.addEventListener('input', calculateROI);
+      rateInput.addEventListener('input', calculateROI);
+      calculateROI();
+    }
+
+    // SheetDB Form Submission
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+
+        // Visual feedback
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.classList.remove('hidden', 'text-rose-400', 'text-emerald-400');
+        formStatus.classList.add('text-cyan-400');
+        formStatus.textContent = 'Processing your request...';
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        // Add a timestamp
+        data.date = new Date().toLocaleString();
+
+        fetch('https://sheetdb.io/api/v1/8h250m0bvd2qo', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ data: [data] }),
+        })
+          .then(response => {
+            if (response.ok) {
+              formStatus.textContent = 'Message sent! I’ll get back to you soon.';
+              formStatus.classList.replace('text-cyan-400', 'text-emerald-400');
+              contactForm.reset();
+              calculateROI(); // Reset ROI display if needed
+            } else {
+              throw new Error('Form submission failed');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+            formStatus.classList.replace('text-cyan-400', 'text-rose-400');
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message';
+            setTimeout(() => {
+              formStatus.classList.add('hidden');
+            }, 5000);
+          });
+      });
+    }
+
+    /* -----------------------------
+       HERO DASHBOARD ANIMATION
+    ----------------------------- */
+    const dashTime = document.getElementById('dash-time');
+    const dashTasks = document.getElementById('dash-tasks');
+    const dashBookings = document.getElementById('dash-bookings');
+    const dashProgress = document.getElementById('dash-progress');
+    const dashLoad = document.getElementById('dash-load');
+
+    if (dashTime && dashTasks && dashBookings) {
+      // Internal state
+      let stats = { time: 0, tasks: 0, bookings: 0 };
+      const targets = { time: 10, tasks: 80, bookings: 30 };
+
+      // Initial count-up
+      const animateCount = () => {
+        const speed = 0.05;
+        let animated = false;
+
+        Object.keys(targets).forEach(key => {
+          if (stats[key] < targets[key]) {
+            stats[key] = Math.min(targets[key], stats[key] + targets[key] * speed);
+            animated = true;
+          }
+        });
+
+        dashTime.textContent = Math.floor(stats.time);
+        dashTasks.textContent = Math.floor(stats.tasks);
+        dashBookings.textContent = Math.floor(stats.bookings);
+
+        if (animated) requestAnimationFrame(animateCount);
+      };
+
+      animateCount();
+
+      // Live fluctuations
+      setInterval(() => {
+        // Progress bar wiggle
+        dashProgress.style.width = (20 + Math.random() * 60) + '%';
+
+        // Load fluctuation
+        dashLoad.textContent = `CPU: ${Math.floor(10 + Math.random() * 20)}%`;
+
+        // Small stat bumps
+        if (Math.random() > 0.8) {
+          dashTime.classList.add('scale-110', 'text-white');
+          setTimeout(() => dashTime.classList.remove('scale-110', 'text-white'), 500);
+        }
+      }, 3000);
+    }
+  </script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
