@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Poppins:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 /* ── CSS Custom Properties ── */
 :root {
@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif !important;
+  font-family: 'JetBrains Mono', monospace !important;
   background-color: var(--bg-primary) !important;
   color: var(--text-primary) !important;
   line-height: 1.6;
@@ -66,37 +66,36 @@ body {
    TYPOGRAPHY
    ══════════════════════════════════ */
 
-/* Primary: Space Grotesk — Hero headlines, Section titles */
+/* Unified Typeface: JetBrains Mono — Headlines, Body, UI */
 h1, h2 {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'JetBrains Mono', monospace !important;
   letter-spacing: -0.02em;
   line-height: 1.15 !important;
 }
 
 h1 {
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
 }
 
 h2 {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   font-size: clamp(1.75rem, 3.5vw, 2.75rem) !important;
 }
 
-/* Secondary: Poppins — Body, subheadings, UI */
 h3 {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 500 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600 !important;
   line-height: 1.4 !important;
 }
 
 p, li, span, a, label, select, option, button, input, textarea {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-/* Code: IBM Plex Mono — Code snippets, technical UI */
+/* Code & Mono Elements */
 .font-mono, code, pre, kbd, samp {
-  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace !important;
+  font-family: 'JetBrains Mono', monospace !important;
 }
 
 /* ══════════════════════════════════
@@ -305,7 +304,7 @@ header a.bg-cyan-400[href="#contact"]:hover {
 }
 
 #mobile-nav nav a {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'JetBrains Mono', monospace !important;
   font-size: 1.25rem !important;
   font-weight: 600;
   padding: 12px 0;
@@ -454,7 +453,7 @@ button.bg-cyan-400:hover {
   top: -10px;
   left: 16px;
   font-size: 5rem;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   color: rgba(0, 229, 255, 0.06);
   line-height: 1;
   pointer-events: none;
@@ -486,7 +485,7 @@ select {
   border-color: rgba(217, 217, 217, 0.2) !important;
   border-radius: 10px !important;
   color: var(--warm-sand) !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'JetBrains Mono', monospace !important;
   transition: all var(--transition-smooth);
 }
 
@@ -709,69 +708,7 @@ header.border-b {
   }
 }
 
-/* ═══════════════════════════════════════
-   LIGHT MODE OVERRIDES
-   ═══════════════════════════════════════ */
-html.light body {
-  background-color: var(--warm-sand) !important;
-  color: var(--midnight-indigo) !important;
-}
 
-html.light .text-slate-100,
-html.light .text-slate-50 {
-  color: var(--midnight-indigo) !important;
-}
-
-html.light .text-slate-200,
-html.light .text-slate-300 {
-  color: rgba(26, 27, 58, 0.75) !important;
-}
-
-html.light .text-slate-400 {
-  color: rgba(26, 27, 58, 0.55) !important;
-}
-
-html.light .bg-slate-950,
-html.light .bg-slate-900,
-html.light .bg-slate-900\/60,
-html.light .bg-slate-900\/40 {
-  background-color: rgba(245, 233, 215, 0.7) !important;
-}
-
-html.light .border-slate-800 {
-  border-color: rgba(26, 27, 58, 0.12) !important;
-}
-
-html.light section.border-t {
-  border-top-color: rgba(26, 27, 58, 0.1) !important;
-}
-
-html.light header.sticky.nav-scrolled {
-  background-color: rgba(245, 233, 215, 0.92) !important;
-  border-bottom-color: rgba(26, 27, 58, 0.1) !important;
-}
-
-html.light input:not([type="range"]),
-html.light textarea,
-html.light select {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgba(26, 27, 58, 0.15) !important;
-  color: var(--midnight-indigo) !important;
-}
-
-html.light #chatbot-window {
-  background-color: var(--warm-sand) !important;
-}
-
-html.light .rounded-2xl.border,
-html.light .rounded-xl.border {
-  background: rgba(255, 255, 255, 0.6) !important;
-  border-color: rgba(26, 27, 58, 0.1) !important;
-}
-
-html.light #case-studies article {
-  border-left-color: var(--vibrant-purple) !important;
-}
 
 /* ═══════════════════════════════════════
    SCROLLBAR STYLING

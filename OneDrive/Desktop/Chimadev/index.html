@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="brand.css" />
   <!-- Inline favicon to avoid /favicon.ico 404 during local dev -->
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" />
+  <link rel="icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" />
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body class="bg-slate-950 text-slate-100 font-mono">
   <!-- Navbar -->
   <header class="sticky top-0 z-30 bg-slate-950/80 backdrop-blur border-b border-slate-800">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -34,10 +35,7 @@
         <a href="#testimonials" class="hover:text-cyan-400 transition">Testimonials</a>
         <a href="#faq" class="hover:text-cyan-400 transition">FAQ</a>
         <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
-        <button id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
-          class="px-3 py-1 rounded-lg border border-slate-700 text-slate-300 text-xs hover:border-cyan-400 transition">
-          🌙 Dark
-        </button>
+
 
       </nav>
       <!-- Mobile hamburger (visible on small screens) -->
@@ -45,7 +43,9 @@
         <button id="mobile-nav-open" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu"
           class="p-2 rounded-md text-slate-200 hover:bg-slate-800/60 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
         </button>
       </div>
       <a href="#contact" aria-label="Connect with Chima for a consultation"
@@ -65,7 +65,9 @@
         <button id="mobile-nav-close" aria-label="Close menu"
           class="p-2 rounded-md text-slate-200 hover:bg-slate-800/60 focus:outline-none focus:ring-2 focus:ring-cyan-400">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6l12 12M6 18L18 6"></path>
+          </svg>
         </button>
       </div>
       <nav class="flex flex-col gap-4" aria-label="Mobile primary">
@@ -75,9 +77,9 @@
         <a href="#testimonials" class="text-slate-200 text-base">Testimonials</a>
         <a href="#faq" class="text-slate-200 text-base">FAQ</a>
         <a href="#contact" class="text-slate-200 text-base">Contact</a>
-        <button id="mobile-theme-toggle" class="mt-4 px-3 py-2 rounded-lg border border-slate-700 text-slate-300 text-sm text-left"
-          aria-label="Toggle theme">Toggle theme</button>
-        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-400 text-slate-950 text-sm font-semibold hover:bg-cyan-300 transition w-max">
+
+        <a href="#contact"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-400 text-slate-950 text-sm font-semibold hover:bg-cyan-300 transition w-max">
           Let’s talk
         </a>
       </nav>
@@ -95,10 +97,10 @@
           <p
             class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/40 text-xs text-cyan-200 mb-4">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Web dev • AI automation • Workflow optimization
+            Software • AI automation • Workflow optimization
           </p>
           <h1 class="text-3xl md:text-5xl font-semibold tracking-tight text-slate-50 mb-4">
-            Websites that hustle harder<br class="hidden md:block" /> than you do.
+            Software that hustle harder<br class="hidden md:block" /> than you do.
           </h1>
           <p class="text-slate-300 text-base md:text-lg mb-6 max-w-xl">
             I design, build, and automate digital experiences that save small businesses, influencers, and solo hustlers
@@ -171,17 +173,23 @@
         <div>
           <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-4">Meet Chima — Your Workflow Wingman</h2>
           <p class="text-slate-300 mb-4">
-            I’m a web developer with a knack for turning chaos into clarity. My toolkit isn’t just code — it’s strategy,
+            I’m a Software developer & AI solutions architect with a knack for turning chaos into clarity. My toolkit
+            isn’t just code — it’s
+            strategy,
             design thinking, and a healthy dose of humor.
           </p>
           <p class="text-slate-300 mb-4">
-            I blend <span class="text-cyan-300 font-medium">AI product management, project leadership, and business
-              process automation</span> into solutions that actually make life easier. Whether you’re an Instagram
+            I blend <span class="text-cyan-300 font-medium">Coding, AI product development, project leadership, and
+              business
+              process automation</span> into solutions that actually make life easier. Whether you’re an enterpreneur,
+            small & medium size company, an Instagram
             influencer juggling content, or a small business owner buried in spreadsheets, I help you reclaim your time
             and sanity.
           </p>
           <p class="text-slate-300 mb-4">
-            Think of me as the guy who makes your tech <span class="italic">work for you</span>, not the other way
+            Think of me as the guy who builds your tech solutions <span class="italic">work for you</span>, not the
+            other
+            way
             around.
           </p>
         </div>
@@ -189,10 +197,10 @@
           <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
             <h3 class="text-sm font-semibold text-slate-100 mb-2">Core Skills</h3>
             <ul class="text-sm text-slate-300 space-y-1">
-              <li>• AI Product Management & Strategy Thinking</li>
-              <li>• Project Management & Organizational Systems</li>
+              <li>• Software, Product Management & Strategic Thinking</li>
+              <li>• Websites, Dashboards & Organizational Systems</li>
               <li>• Business Process Automation & Integrations</li>
-              <li>• Internal Apps & Workflow Optimization for small teams</li>
+              <li>• Internal Apps & Workflow Optimization for teams</li>
             </ul>
           </div>
           <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
@@ -232,25 +240,31 @@
                 <span class="text-slate-200 text-sm font-medium">Claude AI</span>
               </div>
 
-              <!-- Notion -->
+              <!-- Gemini CLI -->
               <div
                 class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
-                <svg width="32" height="32" viewBox="0 0 256 256">
-                  <path fill="#FFF" d="M42.2 36.3v183.4h171.6V36.3H42.2zm151.4 163.7H62.4V56h131.2v144z" />
-                  <path d="M72.7 75.6h20.4L137 141V75.6h20.4v104.8h-20.4L93.1 115v65.4H72.7V75.6z" />
-                </svg>
-                <span class="text-slate-200 text-sm font-medium">Notion</span>
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-lg">
+                  G</div>
+                <span class="text-slate-200 text-sm font-medium">Gemini CLI</span>
               </div>
 
-              <!-- Airtable -->
+              <!-- Next.JS -->
               <div
                 class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
-                <svg width="32" height="32" viewBox="0 0 256 256">
-                  <path fill="#18BFFF" d="M128 24l96 56v104l-96 56l-96-56V80l96-56z" />
-                  <path fill="#FFF" d="M128 64l64 36v56l-64 36l-64-36V100l64-36z" />
-                  <path fill="#18BFFF" d="M128 88l40 24v32l-40 24l-40-24v-32l40-24z" />
+                <div
+                  class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-100 font-bold text-lg">
+                  N</div>
+                <span class="text-slate-200 text-sm font-medium">Next.JS</span>
+              </div>
+
+              <!-- Vercel -->
+              <div
+                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
+                <svg width="32" height="32" viewBox="0 0 256 256" fill="white">
+                  <path d="M128 24L256 232H0z" />
                 </svg>
-                <span class="text-slate-200 text-sm font-medium">Airtable</span>
+                <span class="text-slate-200 text-sm font-medium">Vercel</span>
               </div>
 
               <!-- Stripe -->
@@ -326,14 +340,7 @@
                 <span class="text-slate-200 text-sm font-medium">Python</span>
               </div>
 
-              <!-- Power BI -->
-              <div
-                class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
-                <svg width="34" height="34" viewBox="0 0 48 48">
-                  <path fill="#F2C811" d="M6 10h6v28H6zM16 16h6v22h-6zM26 6h6v32h-6zM36 20h6v18h-6z" />
-                </svg>
-                <span class="text-slate-200 text-sm font-medium">Power BI</span>
-              </div>
+
 
               <!-- Google AI Studio -->
               <div
@@ -358,15 +365,13 @@
                 <span class="text-slate-200 text-sm font-medium">Stitch</span>
               </div>
 
-              <!-- WordPress -->
+              <!-- Webflow -->
               <div
                 class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col items-center gap-3 hover:border-cyan-400/60 transition">
-                <svg width="34" height="34" viewBox="0 0 128 128">
-                  <circle cx="64" cy="64" r="60" fill="#21759B" />
-                  <path fill="#fff"
-                    d="M64 20c-24 0-44 20-44 44s20 44 44 44s44-20 44-44S88 20 64 20zm0 6c21 0 38 17 38 38c0 15-9 28-22 34l14-40c1-3 1-5 1-7c0-8-4-14-10-14c-4 0-7 3-7 8c0 3 1 6 2 10l2 8l-12 36L48 40c-1-3-2-6-2-9c0-5 3-9 8-9c4 0 7 3 9 8l3 10l3 10l3-10c2-6 5-8 9-8c5 0 8 4 8 9c0 2 0 4-1 7l-14 40c-5 2-10 3-15 3c-21 0-38-17-38-38S43 26 64 26z" />
-                </svg>
-                <span class="text-slate-200 text-sm font-medium">WordPress</span>
+                <div
+                  class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+                  W</div>
+                <span class="text-slate-200 text-sm font-medium">Webflow</span>
               </div>
 
             </div>
@@ -452,7 +457,7 @@
           </div>
           <h3 class="text-base font-semibold mb-2 text-slate-50">Branding & Integrations</h3>
           <p class="text-sm text-slate-300 leading-relaxed">
-            Cohesive digital identities plus seamless connections between tools like Notion, Airtable, and Stripe.
+            Cohesive digital identities plus seamless connections between tools like Next.JS, Vercel, and Stripe.
           </p>
         </div>
 
@@ -683,7 +688,7 @@
             <div>
               <h4 class="font-semibold text-slate-100 mb-1">The Approach</h4>
               <p>
-                I built a WordPress e‑commerce site with automated order tracking, connected inventory via Stitch,
+                I built a Webflow e‑commerce site with automated order tracking, connected inventory via Stitch,
                 automated order confirmations and shipping updates, and embedded a Microsoft BI sales dashboard.
               </p>
             </div>
@@ -906,9 +911,12 @@
           </p>
           <div class="space-y-2 text-sm text-slate-300">
             <p>
-              <a href="mailto:hallo@chimadev.com" aria-label="Email Chima" class="inline-flex items-center group mr-2 align-middle">
-                <span class="w-6 h-6 rounded-full bg-slate-800/30 flex items-center justify-center transition-colors group-hover:bg-cyan-400/10 align-middle">
-                  <svg class="w-3 h-3 text-slate-300 group-hover:text-cyan-300 align-middle" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <a href="mailto:hallo@chimadev.com" aria-label="Email Chima"
+                class="inline-flex items-center group mr-2 align-middle">
+                <span
+                  class="w-6 h-6 rounded-full bg-slate-800/30 flex items-center justify-center transition-colors group-hover:bg-cyan-400/10 align-middle">
+                  <svg class="w-3 h-3 text-slate-300 group-hover:text-cyan-300 align-middle" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M2.94 6.22A2 2 0 014 5h12a2 2 0 011.06.22l-7.06 4.7L2.94 6.22z" />
                     <path d="M18 8.56V14a2 2 0 01-2 2H4a2 2 0 01-2-2V8.56l7.07 4.7a3 3 0 003.86 0L18 8.56z" />
                   </svg>
@@ -917,20 +925,28 @@
               hallo@chimadev.com
             </p>
             <p>
-              <a href="https://www.linkedin.com/in/chima-oladayo-ohiagbaji/" target="_blank" rel="noopener" aria-label="Chima on LinkedIn" class="inline-flex items-center group mr-2 align-middle">
-                <span class="w-6 h-6 rounded-full bg-slate-800/30 flex items-center justify-center transition-colors group-hover:bg-cyan-400/10 align-middle">
-                  <svg class="w-3 h-3 text-slate-300 group-hover:text-cyan-300 align-middle" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 24h4V7h-4v17zM8.5 7v17h4V14.5c0-3 4-3.25 4 0V24h4V13c0-6-6.5-5.8-8-2.8V7h-4z" />
+              <a href="https://www.linkedin.com/in/chima-oladayo-ohiagbaji/" target="_blank" rel="noopener"
+                aria-label="Chima on LinkedIn" class="inline-flex items-center group mr-2 align-middle">
+                <span
+                  class="w-6 h-6 rounded-full bg-slate-800/30 flex items-center justify-center transition-colors group-hover:bg-cyan-400/10 align-middle">
+                  <svg class="w-3 h-3 text-slate-300 group-hover:text-cyan-300 align-middle" viewBox="0 0 24 24"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 24h4V7h-4v17zM8.5 7v17h4V14.5c0-3 4-3.25 4 0V24h4V13c0-6-6.5-5.8-8-2.8V7h-4z" />
                   </svg>
                 </span>
               </a>
               https://www.linkedin.com/in/chima-oladayo-ohiagbaji/
             </p>
             <p>
-              <a href="https://www.instagram.com/fxboro_1948/" target="_blank" rel="noopener" aria-label="Chima on Instagram" class="inline-flex items-center group mr-2 align-middle">
-                <span class="w-6 h-6 rounded-full bg-slate-800/30 flex items-center justify-center transition-colors group-hover:bg-cyan-400/10 align-middle">
-                  <svg class="w-3 h-3 text-slate-300 group-hover:text-cyan-300 align-middle" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.3 1 .7 1.4 1.4.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.3.6-.7 1-1.4 1.4-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.3-1-.7-1.4-1.4-.2-.4-.4-1.1-.5-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.3-.6.7-1 1.4-1.4.4-.2 1.1-.4 2.3-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3 0-3.3 0-4.5.1-1 .1-1.6.2-1.9.4-.5.2-.8.5-1.1 1-.2.3-.4.9-.4 1.9-.1 1.2-.1 1.5-.1 4.5s0 3.3.1 4.5c.1 1 .2 1.6.4 1.9.2.5.5.8 1 1.1.3.2.9.4 1.9.4 1.2.1 1.5.1 4.5.1s3.3 0 4.5-.1c1-.1 1.6-.2 1.9-.4.5-.2.8-.5 1.1-1 .2-.3.4-.9.4-1.9.1-1.2.1-1.5.1-4.5s0-3.3-.1-4.5c-.1-1-.2-1.6-.4-1.9-.2-.5-.5-.8-1-1.1-.3-.2-.9-.4-1.9-.4-1.2-.1-1.5-.1-4.5-.1zM12 7.4a4.6 4.6 0 110 9.2 4.6 4.6 0 010-9.2zm0 1.8a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM17.8 6.2a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
+              <a href="https://www.instagram.com/fxboro_1948/" target="_blank" rel="noopener"
+                aria-label="Chima on Instagram" class="inline-flex items-center group mr-2 align-middle">
+                <span
+                  class="w-6 h-6 rounded-full bg-slate-800/30 flex items-center justify-center transition-colors group-hover:bg-cyan-400/10 align-middle">
+                  <svg class="w-3 h-3 text-slate-300 group-hover:text-cyan-300 align-middle" viewBox="0 0 24 24"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.3 1 .7 1.4 1.4.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.3.6-.7 1-1.4 1.4-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.3-1-.7-1.4-1.4-.2-.4-.4-1.1-.5-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.3-.6.7-1 1.4-1.4.4-.2 1.1-.4 2.3-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3 0-3.3 0-4.5.1-1 .1-1.6.2-1.9.4-.5.2-.8.5-1.1 1-.2.3-.4.9-.4 1.9-.1 1.2-.1 1.5-.1 4.5s0 3.3.1 4.5c.1 1 .2 1.6.4 1.9.2.5.5.8 1 1.1.3.2.9.4 1.9.4 1.2.1 1.5.1 4.5.1s3.3 0 4.5-.1c1-.1 1.6-.2 1.9-.4.5-.2.8-.5 1.1-1 .2-.3.4-.9.4-1.9.1-1.2.1-1.5.1-4.5s0-3.3-.1-4.5c-.1-1-.2-1.6-.4-1.9-.2-.5-.5-.8-1-1.1-.3-.2-.9-.4-1.9-.4-1.2-.1-1.5-.1-4.5-.1zM12 7.4a4.6 4.6 0 110 9.2 4.6 4.6 0 010-9.2zm0 1.8a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM17.8 6.2a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
                   </svg>
                 </span>
               </a>
@@ -988,8 +1004,8 @@
   <footer class="border-t border-slate-800 bg-slate-950">
     <div
       class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-      <p>© <span id="year"></span> Chima.dev — Web, AI & Workflows.</p>
-      <p>Built with HTML, Tailwind, and a little bit of automation magic.</p>
+      <p>© <span id="year"></span> Chima.dev — Software, Web, AI & Workflows.</p>
+      <p>Built with HTML, Tailwind, raw Javascript, and a little bit of automation magic.</p>
     </div>
   </footer>
 
@@ -1266,27 +1282,7 @@
   </script>
 
   <script>
-    const themeToggle = document.getElementById("theme-toggle");
 
-    function applyTheme(mode) {
-      if (mode === "light") {
-        document.documentElement.classList.add("light");
-        document.documentElement.classList.remove("dark");
-        themeToggle.textContent = "☀️ Light";
-      } else {
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-        themeToggle.textContent = "🌙 Dark";
-      }
-      localStorage.setItem("theme", mode);
-    }
-
-    themeToggle.addEventListener("click", () => {
-      const current = localStorage.getItem("theme") || "dark";
-      applyTheme(current === "dark" ? "light" : "dark");
-    });
-
-    applyTheme(localStorage.getItem("theme") || "dark");
 
     const typingSound = document.getElementById("typing-sound");
 

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dashStress = document.getElementById('dash-stress');
   const dashProgress = document.getElementById('dash-progress');
   const dashLoad = document.getElementById('dash-load');
-  const themeToggle = document.getElementById('theme-toggle');
+
 
   // Populate demo dashboard values (safe, no network calls)
   try {
@@ -20,35 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('dashboard init error', e);
   }
 
-  // Theme toggle: toggles `dark` class on <html> and persists to localStorage
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-      if (themeToggle) themeToggle.textContent = '☀️ Light';
-    } else {
-      document.documentElement.classList.add('dark');
-      if (themeToggle) themeToggle.textContent = '🌙 Dark';
-    }
-  }
 
-  const saved = localStorage.getItem('chima:theme') || 'dark';
-  applyTheme(saved);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem('chima:theme', next); } catch (e) {}
-    });
-  }
 
   // Mobile nav: accessible open/close + focus trap
   const mobileOpen = document.getElementById('mobile-nav-open');
   const mobileClose = document.getElementById('mobile-nav-close');
   const mobileNav = document.getElementById('mobile-nav');
   const mobileOverlay = document.getElementById('mobile-nav-overlay');
-  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
   let _lastFocus = null;
 
   function trapKey(e) {
@@ -95,15 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
   if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
 
-  // wire mobile theme toggle to reuse applyTheme and persist
-  if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener('click', () => {
-      const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem('chima:theme', next); } catch (e) {}
-    });
-  }
+
 
   // ── Scroll-based Navigation ──
   // Toggle .nav-scrolled on header when user scrolls past hero section
