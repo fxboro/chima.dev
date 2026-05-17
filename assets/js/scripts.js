@@ -370,9 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
     botMode.addEventListener("change", updateAvatar);
     updateAvatar();
 
-    // PLEASE REPLACE 'YOUR_GEMINI_API_KEY' with your actual API key.
-    // WARNING: Restrict this key to your domain in Google Cloud Console!
-    const GEMINI_API_KEY = "AIzaSyDzWb6vfEIAAoqdrKQTweVus_iPBsyBRQg";
+    // The API key has been moved to the backend server (.env -> GEMINI_API_KEY)
+    // for security. The frontend now communicates via the /api/chat proxy.
 
     const SYSTEM_PROMPT = `You are Chima's AI assistant on his portfolio site (chimadev.com).
 Chima is a Web Developer, Workflow Optimizer, and AI Evangelizer.
@@ -398,10 +397,9 @@ Instructions:
 - DO NOT invent information.
 `;
 
+    let chatSessionHistory = [];
+
     async function botReply(text) {
-      if (!GEMINI_API_KEY || GEMINI_API_KEY === "YOUR_GEMINI_API_KEY" || GEMINI_API_KEY === "") {
-        return "I'm currently in demo mode. My creator needs to insert their API Key to wake me up fully!";
-      }
 
       const mode = botMode.value;
       let toneInstruction = "";
@@ -409,24 +407,36 @@ Instructions:
       if (mode === "professional") toneInstruction = "Use a highly professional, polite, and concise tone.";
       if (mode === "sarcastic") toneInstruction = "Use a sarcastic, witty, slightly condescending but ultimately helpful tone (like a tired genius).";
 
+      chatSessionHistory.push({ role: "user", parts: [{ text: text }] });
+
       try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent?key=${GEMINI_API_KEY}`, {
+        const response = await fetch(`/api/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             systemInstruction: {
               parts: [{ text: SYSTEM_PROMPT + "\n\n" + toneInstruction }]
             },
-            contents: [{ parts: [{ text: text }] }]
+            contents: chatSessionHistory
           })
         });
 
-        if (!response.ok) throw new Error("API Error");
+        if (!response.ok) {
+          const errData = await response.json();
+          console.error("API Error Response:", errData);
+          throw new Error("API Error");
+        }
 
         const data = await response.json();
-        return data.candidates[0].content.parts[0].text;
+        const replyText = data.candidates[0].content.parts[0].text;
+        
+        chatSessionHistory.push({ role: "model", parts: [{ text: replyText }] });
+        
+        return replyText;
       } catch (err) {
         console.error("Chatbot API Error:", err);
+        // Pop the user message if it failed, so they can try again
+        chatSessionHistory.pop();
         return "Oops, my circuits got crossed. Please email Chima at hallo@chimadev.com instead!";
       }
     }
@@ -605,7 +615,7 @@ Instructions:
   function initTracking() {
     // Insert your tracking codes (e.g., Google Analytics, Meta Pixel) here
     console.log("Tracking initialized. User accepted cookies.");
-    
+
     // Example for GA4:
     // const script = document.createElement('script');
     // script.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID';
